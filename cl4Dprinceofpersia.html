@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Retro Game Launcher</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+button{
+    padding:30px 50px;
+    font-size:32px;
+    font-weight:bold;
+    border:none;
+    border-radius:20px;
+    background:#00d4ff;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="launchGame()">
+OPEN RETRO GAME
+</button>
+
+<script>
+
+async function launchGame(){
+
+    /* fullscreen current page */
+
+    if(document.documentElement.requestFullscreen){
+        await document.documentElement.requestFullscreen();
+    }
+
+    /* open game */
+
+    const win = window.open(
+        "https://www.retrogames.cz/play_479-DOS.php",
+        "_blank"
+    );
+
+    if(!win){
+        alert("Allow popups first");
+    }
+}
+
+</script>
+
+</body>
+</html>
