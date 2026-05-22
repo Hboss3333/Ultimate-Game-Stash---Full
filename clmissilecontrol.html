@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Missile Command Launcher</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+button{
+    padding:30px 50px;
+    font-size:32px;
+    font-weight:bold;
+    border:none;
+    border-radius:20px;
+    background:#00d4ff;
+    cursor:pointer;
+    box-shadow:0 0 20px #00d4ff;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="launchGame()">
+OPEN MISSILE COMMAND
+</button>
+
+<script>
+
+async function launchGame(){
+
+    if(document.documentElement.requestFullscreen){
+        await document.documentElement.requestFullscreen();
+    }
+
+    const win = window.open(
+        "https://www.retrogames.cc/gameboycolor-games/missile-command-usa.html",
+        "_blank"
+    );
+
+    if(!win){
+        alert("Allow popups first");
+    }
+}
+
+</script>
+
+</body>
+</html>
