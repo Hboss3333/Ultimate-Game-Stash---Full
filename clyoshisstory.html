@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yoshi's Story Launcher</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+button{
+    padding:30px 50px;
+    font-size:32px;
+    font-weight:bold;
+    border:none;
+    border-radius:20px;
+    background:#32cd32;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 25px #32cd32;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="launchGame()">
+OPEN YOSHI'S STORY
+</button>
+
+<script>
+
+async function launchGame(){
+
+    /* fullscreen current page */
+
+    if(document.documentElement.requestFullscreen){
+        await document.documentElement.requestFullscreen();
+    }
+
+    /* open game */
+
+    const win = window.open(
+        "https://www.retrogames.cc/n64-games/yoshi-s-story-usa-en-ja.html",
+        "_blank"
+    );
+
+    if(!win){
+        alert("Allow popups first");
+    }
+}
+
+</script>
+
+</body>
+</html>
