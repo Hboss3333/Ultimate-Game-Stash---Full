@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Super Mario Kart Double Dash Reverse Remake Launcher</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:Arial;
+}
+
+button{
+    padding:30px 50px;
+    font-size:32px;
+    font-weight:bold;
+    border:none;
+    border-radius:20px;
+    background:#00aaff;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 0 25px #00aaff;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="launchGame()">
+OPEN SUPER MARIO KART DOUBLE DASH
+</button>
+
+<script>
+
+async function launchGame(){
+
+    if(document.documentElement.requestFullscreen){
+        await document.documentElement.requestFullscreen();
+    }
+
+    const win = window.open(
+        "https://www.retrogames.cc/snes-games/super-mario-kart-double-dash-reverse-remake.html",
+        "_blank"
+    );
+
+    if(!win){
+        alert("Allow popups first");
+    }
+}
+
+</script>
+
+</body>
+</html>
